@@ -124,6 +124,16 @@ form button:where(:hover, :focus-visible) {
   color: rgb(10, 124, 10);
 }
 
+.err-msg {
+  display: block;
+  background-color: rgb(184, 2, 2);
+  color: var(--clr-background);
+  padding-block: 0.5rem;
+  text-align: center;
+  font-size: var(--fs-medium);
+  font-weight: var(--fw-bold);
+}
+
 .item-list {
   margin: 0;
   /* background: steelblue; */
@@ -178,7 +188,7 @@ main .empty-message {
 }
 
 footer {
-  margin-bottom: 1rem;
+  margin-bottom: 0.25rem;
   border-top: 2px solid var(--clr-light-text);
 }
 
@@ -200,4 +210,24 @@ footer .container {
 
 footer p {
   margin: 0;
+}
+
+/* Loading Animation */
+.loader {
+  margin: auto;
+  border: 20px solid var(--clr-light-text);
+  border-radius: 50%;
+  border-top: 20px solid var(--clr-blue);
+  width: 200px;
+  height: 200px;
+  animation: spinner 4s linear infinite;
+}
+
+@keyframes spinner {
+  0% {
+    transform: rotate(0deg);
+  }
+  100% {
+    transform: rotate(360deg);
+  }
 }
