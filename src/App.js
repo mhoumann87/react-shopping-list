@@ -8,28 +8,11 @@ import SearchItem from './components/SearchItem.jsx';
 function App() {
   const [items, setItems] = useState(
     JSON.parse(localStorage.getItem('shoppinglist')) || []
-    /* [
-    {
-      id: 1,
-      checked: false,
-      item: 'milk',
-    },
-    {
-      id: 2,
-      checked: true,
-      item: 'cheese',
-    },
-    {
-      id: 3,
-      checked: false,
-      item: 'bread',
-    },
-  ] */
   );
+
   const [newItem, setNewItem] = useState('');
   const [search, setSearch] = useState('');
 
-  // Using useeffect to get our items from storage
   useEffect(() => {
     localStorage.setItem('shoppinglist', JSON.stringify(items));
   }, [items]);
@@ -42,14 +25,11 @@ function App() {
       checked: false,
       item,
     };
-    //console.log(myNewItem);
     const listItems = [...items, myNewItem];
-    //console.log(listItems);
     setItems(listItems);
   };
 
   const handleCheck = id => {
-    //console.log(id);
     const listItems = items.map(item =>
       item.id === id ? { ...item, checked: !item.checked } : item
     );
@@ -65,7 +45,6 @@ function App() {
 
   const handleSubmit = e => {
     e.preventDefault();
-    //console.log(newItem);
     if (!newItem) return;
 
     addItem(newItem);
