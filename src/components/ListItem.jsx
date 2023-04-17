@@ -1,6 +1,7 @@
 import { FaTrashAlt } from 'react-icons/fa';
 
 const ListItem = ({ item, handleCheck, handleDelete }) => {
+  //console.log(item.item);
   return (
     <li className='item flex'>
       <input

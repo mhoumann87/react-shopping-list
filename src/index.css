@@ -88,10 +88,40 @@ header h1 {
 form {
   display: flex;
   width: 100%;
+  justify-content: space-between;
+  align-items: center;
 }
 
 form input {
+  flex-grow: 1;
   width: 100%;
+  margin-right: 1rem;
+  padding: 0.25rem 0.25rem 0.75rem 0.25rem;
+  font-size: var(--fs-medium);
+  margin-bottom: 1rem;
+  border: none;
+  border-bottom: 3px solid var(--clr-blue);
+  background-color: var(--clr-background);
+}
+
+.search-item {
+  margin-right: 0;
+}
+
+form button {
+  width: var(--fs-large);
+  height: var(--fs-large);
+  font-size: var(--fs-medium);
+  padding: 0.15rem;
+  color: var(--clr-blue);
+  background: var(--clr-background);
+  border: none;
+  cursor: pointer;
+  transition: color 450ms ease;
+}
+
+form button:where(:hover, :focus-visible) {
+  color: rgb(10, 124, 10);
 }
 
 .item-list {
@@ -101,6 +131,7 @@ form input {
   flex-direction: column;
   width: 100%;
   list-style-type: none;
+  padding-left: 0;
 }
 
 .item {
@@ -110,7 +141,7 @@ form input {
   padding: 0.5rem 0.75rem;
   border-radius: 10px;
   width: 100%;
-  margin: 0;
+  margin-bottom: 1rem;
 }
 
 input[type='checkbox'] {
